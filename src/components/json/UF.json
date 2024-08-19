@@ -1,0 +1,2541 @@
+[
+  {
+    "id": 1,
+    "nome": "ACRE",
+    "latitude": -8.77,
+		"longitude": -70.55,
+    "sigla": "AC",
+    "municipios": [
+      {
+        "nome": "Rio Branco",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto simples",
+              "quantidade": 8
+            },
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 7
+            },
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 10
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "LSD",
+              "quantidade": 13
+            },
+            {
+              "tipo": "LSD",
+              "quantidade": 10
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe B",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 14
+            },
+            {
+              "classe": "Classe B",
+              "descricao": "Assalto",
+              "quantidade": 7
+            },
+            {
+              "classe": "Classe A",
+              "descricao": "Assalto",
+              "quantidade": 17
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 17,
+              "homicidio": 8,
+              "suicidio": 7
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Cruzeiro do Sul",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 15
+            },
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 16
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Crack",
+              "quantidade": 18
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe B",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 1
+            },
+            {
+              "classe": "Classe D",
+              "descricao": "Furto simples",
+              "quantidade": 14
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 5,
+              "homicidio": 14,
+              "suicidio": 5
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "nome": "ALAGOAS",
+    "latitude": -9.62,
+		"longitude": -36.82,
+    "sigla": "AL",
+    "municipios": [
+      {
+        "nome": "Macei\u00f3",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Assalto",
+              "quantidade": 9
+            },
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 16
+            },
+            {
+              "tipo": "Assalto",
+              "quantidade": 9
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 17
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe D",
+              "descricao": "Assalto",
+              "quantidade": 17
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 9,
+              "homicidio": 16,
+              "suicidio": 11
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Arapiraca",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Assalto",
+              "quantidade": 15
+            },
+            {
+              "tipo": "Furto simples",
+              "quantidade": 11
+            },
+            {
+              "tipo": "Furto simples",
+              "quantidade": 3
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Crack",
+              "quantidade": 3
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe B",
+              "descricao": "Furto qualificado",
+              "quantidade": 15
+            },
+            {
+              "classe": "Classe D",
+              "descricao": "Furto qualificado",
+              "quantidade": 14
+            },
+            {
+              "classe": "Classe C",
+              "descricao": "Assalto",
+              "quantidade": 11
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 8,
+              "homicidio": 18,
+              "suicidio": 20
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "nome": "AMAPA",
+    "latitude": 1.41,
+		"longitude": -51.77,
+    "sigla": "AP",
+    "municipios": [
+      {
+        "nome": "Macap\u00e1",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto simples",
+              "quantidade": 19
+            },
+            {
+              "tipo": "Furto simples",
+              "quantidade": 13
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "LSD",
+              "quantidade": 14
+            },
+            {
+              "tipo": "Crack",
+              "quantidade": 19
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe D",
+              "descricao": "Furto qualificado",
+              "quantidade": 6
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 3,
+              "homicidio": 6,
+              "suicidio": 15
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Santana",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 17
+            },
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 1
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Crack",
+              "quantidade": 19
+            },
+            {
+              "tipo": "LSD",
+              "quantidade": 6
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe C",
+              "descricao": "Assalto",
+              "quantidade": 1
+            },
+            {
+              "classe": "Classe A",
+              "descricao": "Furto qualificado",
+              "quantidade": 14
+            },
+            {
+              "classe": "Classe C",
+              "descricao": "Assalto",
+              "quantidade": 12
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 5,
+              "homicidio": 12,
+              "suicidio": 16
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "nome": "AMAZONAS",
+    "latitude": -3.47,
+		"longitude": -65.1,
+    "sigla": "AM",
+    "municipios": [
+      {
+        "nome": "Manaus",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Assalto",
+              "quantidade": 2
+            },
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 8
+            },
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 20
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Crack",
+              "quantidade": 14
+            },
+            {
+              "tipo": "Maconha",
+              "quantidade": 4
+            },
+            {
+              "tipo": "Crack",
+              "quantidade": 12
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe B",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 17
+            },
+            {
+              "classe": "Classe A",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 8
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 19,
+              "homicidio": 12,
+              "suicidio": 1
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Parintins",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Assalto",
+              "quantidade": 17
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 15
+            },
+            {
+              "tipo": "Crack",
+              "quantidade": 2
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe A",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 1
+            },
+            {
+              "classe": "Classe B",
+              "descricao": "Furto simples",
+              "quantidade": 18
+            },
+            {
+              "classe": "Classe B",
+              "descricao": "Assalto",
+              "quantidade": 11
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 20,
+              "homicidio": 12,
+              "suicidio": 9
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "nome": "BAHIA",
+    "latitude": -13.29,
+		"longitude": -41.71,
+    "sigla": "BA",
+    "municipios": [
+      {
+        "nome": "Salvador",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Assalto",
+              "quantidade": 11
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 10
+            },
+            {
+              "tipo": "Crack",
+              "quantidade": 2
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe A",
+              "descricao": "Furto qualificado",
+              "quantidade": 16
+            },
+            {
+              "classe": "Classe B",
+              "descricao": "Assalto",
+              "quantidade": 9
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 6,
+              "homicidio": 18,
+              "suicidio": 14
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Feira de Santana",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto simples",
+              "quantidade": 3
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Maconha",
+              "quantidade": 13
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe B",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 11
+            },
+            {
+              "classe": "Classe C",
+              "descricao": "Assalto",
+              "quantidade": 14
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 4,
+              "homicidio": 17,
+              "suicidio": 7
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "nome": "CEARÀ",
+    "latitude": -5.2,
+		"longitude": -39.53,
+    "sigla": "CE",
+    "municipios": [
+      {
+        "nome": "Fortaleza",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Assalto",
+              "quantidade": 3
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 1
+            },
+            {
+              "tipo": "Crack",
+              "quantidade": 7
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe B",
+              "descricao": "Assalto",
+              "quantidade": 14
+            },
+            {
+              "classe": "Classe A",
+              "descricao": "Furto qualificado",
+              "quantidade": 4
+            },
+            {
+              "classe": "Classe A",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 1
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 8,
+              "homicidio": 13,
+              "suicidio": 14
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Juazeiro do Norte",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto simples",
+              "quantidade": 7
+            },
+            {
+              "tipo": "Assalto",
+              "quantidade": 12
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 15
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe A",
+              "descricao": "Assalto",
+              "quantidade": 10
+            },
+            {
+              "classe": "Classe C",
+              "descricao": "Furto simples",
+              "quantidade": 9
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 7,
+              "homicidio": 13,
+              "suicidio": 3
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "nome": "DISTRITO FEDERAL",
+    "latitude": -15.83,
+		"longitude": -47.86,
+    "sigla": "DF",
+    "municipios": [
+      {
+        "nome": "Bras\u00edlia",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 17
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "LSD",
+              "quantidade": 11
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe A",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 7
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 13,
+              "homicidio": 9,
+              "suicidio": 14
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "nome": "ESPIRITO SANTO",
+    "latitude": -19.19,
+		"longitude": -40.34,
+    "sigla": "ES",
+    "municipios": [
+      {
+        "nome": "Vit\u00f3ria",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 10
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Crack",
+              "quantidade": 2
+            },
+            {
+              "tipo": "Crack",
+              "quantidade": 20
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe B",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 15
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 17,
+              "homicidio": 18,
+              "suicidio": 4
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Vila Velha",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Assalto",
+              "quantidade": 2
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "LSD",
+              "quantidade": 13
+            },
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 17
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe C",
+              "descricao": "Assalto",
+              "quantidade": 18
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 15,
+              "homicidio": 6,
+              "suicidio": 14
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "nome": "GOIAS",
+    "latitude": -15.98,
+		"longitude": -49.86,
+    "sigla": "GO",
+    "municipios": [
+      {
+        "nome": "Goi\u00e2nia",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto simples",
+              "quantidade": 3
+            },
+            {
+              "tipo": "Furto simples",
+              "quantidade": 12
+            },
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 11
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "LSD",
+              "quantidade": 8
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe B",
+              "descricao": "Assalto",
+              "quantidade": 4
+            },
+            {
+              "classe": "Classe A",
+              "descricao": "Furto simples",
+              "quantidade": 5
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 14,
+              "homicidio": 1,
+              "suicidio": 2
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Aparecida de Goi\u00e2nia",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto simples",
+              "quantidade": 1
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Crack",
+              "quantidade": 19
+            },
+            {
+              "tipo": "Maconha",
+              "quantidade": 5
+            },
+            {
+              "tipo": "Maconha",
+              "quantidade": 14
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe D",
+              "descricao": "Assalto",
+              "quantidade": 1
+            },
+            {
+              "classe": "Classe C",
+              "descricao": "Furto qualificado",
+              "quantidade": 20
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 5,
+              "homicidio": 15,
+              "suicidio": 13
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "nome": "MARANHÃO",
+    "latitude": -5.42,
+		"longitude": -45.44,
+    "sigla": "MA",
+    "municipios": [
+      {
+        "nome": "S\u00e3o Lu\u00eds",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Assalto",
+              "quantidade": 5
+            },
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 19
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Crack",
+              "quantidade": 12
+            },
+            {
+              "tipo": "LSD",
+              "quantidade": 20
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe A",
+              "descricao": "Furto simples",
+              "quantidade": 11
+            },
+            {
+              "classe": "Classe C",
+              "descricao": "Assalto",
+              "quantidade": 3
+            },
+            {
+              "classe": "Classe C",
+              "descricao": "Furto qualificado",
+              "quantidade": 10
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 17,
+              "homicidio": 20,
+              "suicidio": 20
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Imperatriz",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto simples",
+              "quantidade": 18
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Crack",
+              "quantidade": 10
+            },
+            {
+              "tipo": "LSD",
+              "quantidade": 19
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe A",
+              "descricao": "Furto simples",
+              "quantidade": 4
+            },
+            {
+              "classe": "Classe A",
+              "descricao": "Furto qualificado",
+              "quantidade": 7
+            },
+            {
+              "classe": "Classe A",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 14
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 14,
+              "homicidio": 16,
+              "suicidio": 16
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "nome": "MATO GROSSO",
+    "latitude": -12.64,
+		"longitude": -55.42,
+    "sigla": "MT",
+    "municipios": [
+      {
+        "nome": "Cuiab\u00e1",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Assalto",
+              "quantidade": 2
+            },
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 1
+            },
+            {
+              "tipo": "Furto simples",
+              "quantidade": 1
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Crack",
+              "quantidade": 6
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe C",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 2
+            },
+            {
+              "classe": "Classe B",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 16
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 3,
+              "homicidio": 8,
+              "suicidio": 7
+            }
+          ]
+        }
+      },
+      {
+        "nome": "V\u00e1rzea Grande",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 18
+            },
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 1
+            },
+            {
+              "tipo": "Assalto",
+              "quantidade": 5
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Crack",
+              "quantidade": 8
+            },
+            {
+              "tipo": "LSD",
+              "quantidade": 8
+            },
+            {
+              "tipo": "LSD",
+              "quantidade": 8
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe B",
+              "descricao": "Furto simples",
+              "quantidade": 18
+            },
+            {
+              "classe": "Classe D",
+              "descricao": "Furto qualificado",
+              "quantidade": 6
+            },
+            {
+              "classe": "Classe B",
+              "descricao": "Furto simples",
+              "quantidade": 20
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 12,
+              "homicidio": 13,
+              "suicidio": 14
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "nome": "MATO GROSSO DO SUL",
+    "latitude": -20.51,
+		"longitude": -54.54,
+    "sigla": "MS",
+    "municipios": [
+      {
+        "nome": "Campo Grande",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Assalto",
+              "quantidade": 8
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "LSD",
+              "quantidade": 15
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe D",
+              "descricao": "Furto qualificado",
+              "quantidade": 2
+            },
+            {
+              "classe": "Classe A",
+              "descricao": "Furto qualificado",
+              "quantidade": 11
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 20,
+              "homicidio": 19,
+              "suicidio": 6
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Dourados",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 17
+            },
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 13
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Maconha",
+              "quantidade": 7
+            },
+            {
+              "tipo": "Crack",
+              "quantidade": 12
+            },
+            {
+              "tipo": "Crack",
+              "quantidade": 10
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe B",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 5
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 11,
+              "homicidio": 7,
+              "suicidio": 19
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "nome": "MINAS GERAIS",
+    "latitude": -18.1,
+		"longitude": -44.38,
+    "sigla": "MG",
+    "municipios": [
+      {
+        "nome": "Belo Horizonte",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 14
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 15
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe C",
+              "descricao": "Furto qualificado",
+              "quantidade": 15
+            },
+            {
+              "classe": "Classe B",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 18
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 5,
+              "homicidio": 12,
+              "suicidio": 11
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Uberl\u00e2ndia",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 15
+            },
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 16
+            },
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 15
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 9
+            },
+            {
+              "tipo": "Crack",
+              "quantidade": 2
+            },
+            {
+              "tipo": "Crack",
+              "quantidade": 13
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe D",
+              "descricao": "Assalto",
+              "quantidade": 19
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 14,
+              "homicidio": 18,
+              "suicidio": 7
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "nome": "PARÁ",
+    "latitude": -3.79,
+		"longitude": -52.48,
+    "sigla": "PA",
+    "municipios": [
+      {
+        "nome": "Bel\u00e9m",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 18
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 13
+            },
+            {
+              "tipo": "Maconha",
+              "quantidade": 18
+            },
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 20
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe B",
+              "descricao": "Furto qualificado",
+              "quantidade": 15
+            },
+            {
+              "classe": "Classe D",
+              "descricao": "Assalto",
+              "quantidade": 16
+            },
+            {
+              "classe": "Classe A",
+              "descricao": "Assalto",
+              "quantidade": 12
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 10,
+              "homicidio": 10,
+              "suicidio": 5
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Ananindeua",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Assalto",
+              "quantidade": 19
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Crack",
+              "quantidade": 5
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe A",
+              "descricao": "Assalto",
+              "quantidade": 12
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 14,
+              "homicidio": 15,
+              "suicidio": 20
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "nome": "PARAÍBA",
+    "latitude": -7.28,
+		"longitude": -36.72,
+    "sigla": "PB",
+    "municipios": [
+      {
+        "nome": "Jo\u00e3o Pessoa",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto simples",
+              "quantidade": 12
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Crack",
+              "quantidade": 16
+            },
+            {
+              "tipo": "Crack",
+              "quantidade": 20
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe A",
+              "descricao": "Assalto",
+              "quantidade": 11
+            },
+            {
+              "classe": "Classe B",
+              "descricao": "Furto qualificado",
+              "quantidade": 9
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 17,
+              "homicidio": 5,
+              "suicidio": 15
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Campina Grande",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 12
+            },
+            {
+              "tipo": "Assalto",
+              "quantidade": 5
+            },
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 10
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Maconha",
+              "quantidade": 9
+            },
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 18
+            },
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 20
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe D",
+              "descricao": "Furto qualificado",
+              "quantidade": 16
+            },
+            {
+              "classe": "Classe B",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 2
+            },
+            {
+              "classe": "Classe C",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 5
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 3,
+              "homicidio": 6,
+              "suicidio": 2
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "nome": "PARANÁ",
+    "latitude": -24.89,
+		"longitude": -51.55,
+    "sigla": "PR",
+    "municipios": [
+      {
+        "nome": "Curitiba",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto simples",
+              "quantidade": 17
+            },
+            {
+              "tipo": "Assalto",
+              "quantidade": 15
+            },
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 19
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 16
+            },
+            {
+              "tipo": "Maconha",
+              "quantidade": 4
+            },
+            {
+              "tipo": "Maconha",
+              "quantidade": 11
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe C",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 19
+            },
+            {
+              "classe": "Classe B",
+              "descricao": "Furto simples",
+              "quantidade": 17
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 7,
+              "homicidio": 9,
+              "suicidio": 19
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Londrina",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Assalto",
+              "quantidade": 18
+            },
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 11
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Maconha",
+              "quantidade": 8
+            },
+            {
+              "tipo": "Maconha",
+              "quantidade": 17
+            },
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 7
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe B",
+              "descricao": "Furto qualificado",
+              "quantidade": 1
+            },
+            {
+              "classe": "Classe A",
+              "descricao": "Furto qualificado",
+              "quantidade": 12
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 3,
+              "homicidio": 19,
+              "suicidio": 2
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "nome": "PERNANBUCO",
+    "latitude": -8.38,
+		"longitude": -37.86,
+    "sigla": "PE",
+    "municipios": [
+      {
+        "nome": "Recife",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 10
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Maconha",
+              "quantidade": 4
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe D",
+              "descricao": "Furto qualificado",
+              "quantidade": 6
+            },
+            {
+              "classe": "Classe B",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 7
+            },
+            {
+              "classe": "Classe B",
+              "descricao": "Assalto",
+              "quantidade": 11
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 6,
+              "homicidio": 2,
+              "suicidio": 15
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Olinda",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto simples",
+              "quantidade": 20
+            },
+            {
+              "tipo": "Furto simples",
+              "quantidade": 20
+            },
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 12
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "LSD",
+              "quantidade": 17
+            },
+            {
+              "tipo": "LSD",
+              "quantidade": 11
+            },
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 18
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe B",
+              "descricao": "Furto qualificado",
+              "quantidade": 19
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 4,
+              "homicidio": 20,
+              "suicidio": 12
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "nome": "PIAUI",
+    "latitude": -6.6,
+		"longitude": -42.28,
+    "sigla": "PI",
+    "municipios": [
+      {
+        "nome": "Teresina",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Assalto",
+              "quantidade": 9
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Crack",
+              "quantidade": 15
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe C",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 6
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 12,
+              "homicidio": 17,
+              "suicidio": 18
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Parna\u00edba",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 5
+            },
+            {
+              "tipo": "Furto simples",
+              "quantidade": 1
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Crack",
+              "quantidade": 17
+            },
+            {
+              "tipo": "Maconha",
+              "quantidade": 20
+            },
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 12
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe A",
+              "descricao": "Assalto",
+              "quantidade": 13
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 14,
+              "homicidio": 10,
+              "suicidio": 11
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "nome": "RIO DE JANEIRO",
+    "latitude": -22.25,
+		"longitude": -42.66,
+    "sigla": "RJ",
+    "municipios": [
+      {
+        "nome": "Rio de Janeiro",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto simples",
+              "quantidade": 10
+            },
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 19
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 1
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe C",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 9
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 1,
+              "homicidio": 9,
+              "suicidio": 8
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Niter\u00f3i",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 10
+            },
+            {
+              "tipo": "Assalto",
+              "quantidade": 5
+            },
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 20
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Crack",
+              "quantidade": 13
+            },
+            {
+              "tipo": "LSD",
+              "quantidade": 15
+            },
+            {
+              "tipo": "Maconha",
+              "quantidade": 13
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe D",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 18
+            },
+            {
+              "classe": "Classe B",
+              "descricao": "Furto qualificado",
+              "quantidade": 14
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 7,
+              "homicidio": 19,
+              "suicidio": 10
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "nome": "RIO GRANDE DO NORTE",
+    "latitude": -5.81,
+		"longitude": -36.59,
+    "sigla": "RN",
+    "municipios": [
+      {
+        "nome": "Natal",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Assalto",
+              "quantidade": 1
+            },
+            {
+              "tipo": "Assalto",
+              "quantidade": 6
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Maconha",
+              "quantidade": 3
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe A",
+              "descricao": "Assalto",
+              "quantidade": 11
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 13,
+              "homicidio": 13,
+              "suicidio": 18
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Mossor\u00f3",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 17
+            },
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 17
+            },
+            {
+              "tipo": "Furto simples",
+              "quantidade": 8
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "LSD",
+              "quantidade": 7
+            },
+            {
+              "tipo": "LSD",
+              "quantidade": 4
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe D",
+              "descricao": "Furto qualificado",
+              "quantidade": 10
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 17,
+              "homicidio": 15,
+              "suicidio": 6
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "nome": "RIO GRANDE DO SUL",
+    "latitude": -30.17,
+		"longitude": -53.5,
+    "sigla": "RS",
+    "municipios": [
+      {
+        "nome": "Porto Alegre",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 14
+            },
+            {
+              "tipo": "Furto simples",
+              "quantidade": 18
+            },
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 4
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Maconha",
+              "quantidade": 1
+            },
+            {
+              "tipo": "Maconha",
+              "quantidade": 2
+            },
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 8
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe B",
+              "descricao": "Furto qualificado",
+              "quantidade": 2
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 14,
+              "homicidio": 15,
+              "suicidio": 9
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Caxias do Sul",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Assalto",
+              "quantidade": 11
+            },
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 11
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Maconha",
+              "quantidade": 10
+            },
+            {
+              "tipo": "Crack",
+              "quantidade": 8
+            },
+            {
+              "tipo": "Crack",
+              "quantidade": 12
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe D",
+              "descricao": "Assalto",
+              "quantidade": 14
+            },
+            {
+              "classe": "Classe C",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 11
+            },
+            {
+              "classe": "Classe D",
+              "descricao": "Assalto",
+              "quantidade": 13
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 20,
+              "homicidio": 2,
+              "suicidio": 6
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "nome": "RONDONIA",
+    "latitude": -10.83,
+		"longitude": -63.34,
+    "sigla": "RO",
+    "municipios": [
+      {
+        "nome": "Porto Velho",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 5
+            },
+            {
+              "tipo": "Assalto",
+              "quantidade": 7
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Crack",
+              "quantidade": 17
+            },
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 20
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe A",
+              "descricao": "Furto simples",
+              "quantidade": 2
+            },
+            {
+              "classe": "Classe D",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 6
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 16,
+              "homicidio": 15,
+              "suicidio": 17
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Ji-Paran\u00e1",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto simples",
+              "quantidade": 16
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "LSD",
+              "quantidade": 1
+            },
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 6
+            },
+            {
+              "tipo": "LSD",
+              "quantidade": 7
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe B",
+              "descricao": "Assalto",
+              "quantidade": 15
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 11,
+              "homicidio": 4,
+              "suicidio": 6
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "nome": "RORAIMA",
+    "latitude": 1.99,
+		"longitude": -61.33,
+    "sigla": "RR",
+    "municipios": [
+      {
+        "nome": "Boa Vista",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Assalto",
+              "quantidade": 18
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Crack",
+              "quantidade": 18
+            },
+            {
+              "tipo": "Crack",
+              "quantidade": 4
+            },
+            {
+              "tipo": "LSD",
+              "quantidade": 7
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe B",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 19
+            },
+            {
+              "classe": "Classe C",
+              "descricao": "Furto qualificado",
+              "quantidade": 5
+            },
+            {
+              "classe": "Classe D",
+              "descricao": "Furto simples",
+              "quantidade": 5
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 6,
+              "homicidio": 5,
+              "suicidio": 6
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Rorain\u00f3polis",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 6
+            },
+            {
+              "tipo": "Furto simples",
+              "quantidade": 13
+            },
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 14
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Maconha",
+              "quantidade": 10
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe A",
+              "descricao": "Furto simples",
+              "quantidade": 12
+            },
+            {
+              "classe": "Classe C",
+              "descricao": "Assalto",
+              "quantidade": 10
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 8,
+              "homicidio": 2,
+              "suicidio": 13
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "nome": "SANTA CATARINA",
+    "latitude": -27.45,
+		"longitude": -50.95,
+    "sigla": "SC",
+    "municipios": [
+      {
+        "nome": "Florian\u00f3polis",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 1
+            },
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 11
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Maconha",
+              "quantidade": 10
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe D",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 7
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 19,
+              "homicidio": 20,
+              "suicidio": 20
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Joinville",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 16
+            },
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 14
+            },
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 2
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 10
+            },
+            {
+              "tipo": "Crack",
+              "quantidade": 4
+            },
+            {
+              "tipo": "Maconha",
+              "quantidade": 13
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe A",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 10
+            },
+            {
+              "classe": "Classe C",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 16
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 17,
+              "homicidio": 15,
+              "suicidio": 17
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "nome": "SÃO PAULO",
+    "latitude": -22.19,
+		"longitude": -48.79,
+    "sigla": "SP",
+    "municipios": [
+      {
+        "nome": "S\u00e3o Paulo",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 16
+            },
+            {
+              "tipo": "Assalto",
+              "quantidade": 5
+            },
+            {
+              "tipo": "Assalto",
+              "quantidade": 8
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 3
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe C",
+              "descricao": "Furto simples",
+              "quantidade": 12
+            },
+            {
+              "classe": "Classe D",
+              "descricao": "Furto simples",
+              "quantidade": 7
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 11,
+              "homicidio": 2,
+              "suicidio": 4
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Campinas",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto simples",
+              "quantidade": 10
+            },
+            {
+              "tipo": "Assalto",
+              "quantidade": 20
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 6
+            },
+            {
+              "tipo": "Crack",
+              "quantidade": 10
+            },
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 14
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe C",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 7
+            },
+            {
+              "classe": "Classe C",
+              "descricao": "Furto qualificado",
+              "quantidade": 1
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 7,
+              "homicidio": 15,
+              "suicidio": 19
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "nome": "SERGIPE",
+    "latitude": -10.57,
+		"longitude": -37.45,
+    "sigla": "SE",
+    "municipios": [
+      {
+        "nome": "Aracaju",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 12
+            },
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 5
+            },
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 13
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Maconha",
+              "quantidade": 3
+            },
+            {
+              "tipo": "LSD",
+              "quantidade": 15
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe B",
+              "descricao": "Furto qualificado",
+              "quantidade": 13
+            },
+            {
+              "classe": "Classe D",
+              "descricao": "Furto qualificado",
+              "quantidade": 1
+            },
+            {
+              "classe": "Classe A",
+              "descricao": "Furto qualificado",
+              "quantidade": 13
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 7,
+              "homicidio": 12,
+              "suicidio": 16
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Nossa Senhora do Socorro",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto simples",
+              "quantidade": 11
+            },
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 9
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "LSD",
+              "quantidade": 6
+            },
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 12
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe A",
+              "descricao": "Assalto",
+              "quantidade": 20
+            },
+            {
+              "classe": "Classe A",
+              "descricao": "Furto qualificado",
+              "quantidade": 17
+            },
+            {
+              "classe": "Classe B",
+              "descricao": "Latroc\u00ednio",
+              "quantidade": 10
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 7,
+              "homicidio": 7,
+              "suicidio": 20
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "nome": "TOCANTINS",
+    "sigla": "TO",
+    "latitude": -9.46,
+		"longitude": -48.26,
+    "municipios": [
+      {
+        "nome": "Palmas",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Latroc\u00ednio",
+              "quantidade": 6
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Crack",
+              "quantidade": 13
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe B",
+              "descricao": "Assalto",
+              "quantidade": 7
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 17,
+              "homicidio": 14,
+              "suicidio": 17
+            }
+          ]
+        }
+      },
+      {
+        "nome": "Aragua\u00edna",
+        "incidencias": {
+          "roubo": [
+            {
+              "tipo": "Furto qualificado",
+              "quantidade": 17
+            }
+          ],
+          "trafico": [
+            {
+              "tipo": "Coca\u00edna",
+              "quantidade": 2
+            }
+          ],
+          "incendio": [
+            {
+              "classe": "Classe C",
+              "descricao": "Assalto",
+              "quantidade": 5
+            }
+          ],
+          "mortes": [
+            {
+              "assassinato": 15,
+              "homicidio": 1,
+              "suicidio": 5
+            }
+          ]
+        }
+      }
+    ]
+  }
+]
