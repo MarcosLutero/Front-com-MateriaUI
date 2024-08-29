@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -13,6 +13,10 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
+import InputAdornment from '@mui/material/InputAdornment';
+import IconButton from '@mui/material/IconButton';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 function Copyright(props: any) {
   return (
@@ -30,18 +34,27 @@ function Copyright(props: any) {
 const defaultTheme = createTheme();
 
 export default function SignInSide() {
-  const navigate = useNavigate();  // useNavigate hook
+  const [error, setError] = useState<string | null>(null);
+  const [showPassword, setShowPassword] = useState(false); // Estado para controlar a visibilidade da senha
+  const navigate = useNavigate();
+
+  const handleClickShowPassword = () => {
+    setShowPassword((prev) => !prev);
+  };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-
-    // Redirecione para o dashboard após o login
-    navigate('/dashboard');
+    const email = data.get('email') as string;
+    const password = data.get('password') as string;
+  
+    const result = fakeAuthLogin(email, password);
+  
+    if (result.success) {
+      navigate('/dashboard');
+    } else {
+      setError(result.message || "An unknown error occurred"); // Garante que uma mensagem de erro seja exibida
+    }
   };
 
   return (
@@ -78,6 +91,11 @@ export default function SignInSide() {
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
+            {error && (
+              <Typography color="error" sx={{ mt: 2 }}>
+                {error}
+              </Typography>
+            )}
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
                 margin="normal"
@@ -95,9 +113,22 @@ export default function SignInSide() {
                 fullWidth
                 name="password"
                 label="Password"
-                type="password"
+                type={showPassword ? 'text' : 'password'}  // Alterna o tipo de input entre 'text' e 'password'
                 id="password"
                 autoComplete="current-password"
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        edge="end"
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
@@ -118,7 +149,7 @@ export default function SignInSide() {
                   </Link>
                 </Grid>
                 <Grid item>
-                <Link href="/signup" variant="body2">
+                  <Link href="/signup" variant="body2">
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>
@@ -130,4 +161,18 @@ export default function SignInSide() {
       </Grid>
     </ThemeProvider>
   );
+}
+
+// Simulação de função de login
+function fakeAuthLogin(email: string, password: string) {
+  const validEmail = "gar.nt@segup.pa.gov.br";
+  const validPassword = "senh@d0g@r";
+
+  if (email === validEmail && password === validPassword) {
+    const token = "fake-jwt-token";
+    localStorage.setItem("token", token);
+    return { success: true, token };
+  } else {
+    return { success: false, message: "Email ou Senha incorretos" };
+  }
 }
