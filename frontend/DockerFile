@@ -1,0 +1,23 @@
+# Use uma imagem base do Node.js
+FROM node:18-alpine
+
+# Defina o diretório de trabalho dentro do contêiner
+WORKDIR /app
+
+# Copie o package.json e o yarn.lock ou package-lock.json
+COPY package*.json yarn.lock ./
+
+# Instale as dependências
+RUN yarn install
+
+# Copie o restante dos arquivos do projeto
+COPY . .
+
+# Build do frontend
+RUN yarn build
+
+# Exponha a porta que o frontend usará
+EXPOSE 3000
+
+# Comando para iniciar o frontend
+CMD ["yarn", "start"]
