@@ -1,5 +1,5 @@
 import React from "react";
-import { Avatar, Box, Divider, Drawer, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import { Avatar, Box, Divider, Drawer, List, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import { styled, useTheme } from "@mui/material/styles";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
@@ -50,17 +50,15 @@ const MenuLateral: React.FC = () => {
       </DrawerHeader>
       <Divider />
       <List>
-        {menuItems.map((item, index) => (
-          <ListItem
+        {menuItems.map((item) => (
+          <ListItemButton
             key={item.text}
-            disablePadding
             component={NavLink}
             to={item.path}
-            selected={location.pathname === item.path} // Destaca o item ativo
             sx={{
               color: "inherit",
               textDecoration: "none",
-              paddingLeft: theme.spacing(2), // Adiciona espaçamento do texto com a borda esquerda
+              paddingLeft: theme.spacing(2),
               "&.active": {
                 backgroundColor: "#839b4a", // Fundo cinza claro para item selecionado
                 color: "#ededed", 
@@ -70,19 +68,19 @@ const MenuLateral: React.FC = () => {
               }
             }}
           >
-            <ListItemIcon sx={{ color: theme.palette.text.primary }}>{item.icon}</ListItemIcon> {/* Ícones com cor padrão */}
+            <ListItemIcon sx={{ color: theme.palette.text.primary }}>{item.icon}</ListItemIcon>
             <ListItemText primary={item.text} />
-          </ListItem>
+          </ListItemButton>
         ))}
       </List>
       <Divider />
       <List>
-        <ListItem button onClick={() => navigate("/login")} disablePadding sx={{ color: theme.palette.text.primary, paddingLeft: theme.spacing(2) }}>
+        <ListItemButton onClick={() => navigate("/login")} sx={{ color: theme.palette.text.primary, paddingLeft: theme.spacing(2) }}>
           <ListItemIcon sx={{ color: theme.palette.text.primary }}>
             <LogoutIcon />
           </ListItemIcon>
           <ListItemText primary="Sair" />
-        </ListItem>
+        </ListItemButton>
       </List>
     </Drawer>
   );
