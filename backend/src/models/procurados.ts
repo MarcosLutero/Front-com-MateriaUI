@@ -1,6 +1,7 @@
 import { Model, DataTypes } from 'sequelize';
 import sequelize from './index'; // Assumindo que você exportou o sequelize no index.ts
 
+
 class Procurados extends Model {
   public id!: number;
   public nome!: string;
@@ -9,6 +10,7 @@ class Procurados extends Model {
   public nomePai!: string;
   public cpf!: string;
   public naturalidade!: string;
+  public municipio!: string;
 }
 
 Procurados.init({
@@ -39,6 +41,10 @@ Procurados.init({
     unique: true,
   },
   naturalidade: {
+    type: new DataTypes.STRING(128),
+    allowNull: true,
+  },
+  municipio: {
     type: new DataTypes.STRING(128),
     allowNull: true,
   },
