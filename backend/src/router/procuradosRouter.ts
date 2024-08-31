@@ -1,6 +1,9 @@
 import express, { Request, Response } from 'express';
 import { Op } from 'sequelize';
-import Procurados from '../models/procurados';
+import Procurado from "../models/procurado";
+import storage from "../storage";
+import { v4 as uuidv4 } from 'uuid';
+import FotoProcurado from '../models/FotoProcurado';
 
 const procuradosRouter = express.Router();
 
@@ -27,7 +30,7 @@ procuradosRouter.get("/procurados", (req: Request, res: Response) => {
             municipio: {
                 [Op.like]: `%${req.query.filter}%`
             },
-        }
+        };
     }
 
     const order = req.query.order && typeof req.query.order === 'string'
@@ -36,7 +39,7 @@ procuradosRouter.get("/procurados", (req: Request, res: Response) => {
         : req.query.order.split(",").map(order => order.split("."))
       : undefined;
   
-    Procurados.findAndCountAll({
+    Procurado.findAndCountAll({
       where: queryFilter,
       order: order as any,
       distinct: true,
@@ -45,6 +48,7 @@ procuradosRouter.get("/procurados", (req: Request, res: Response) => {
     }).then((result) => {
       res.send({
         headers: [
+          { title: "Foto", order: "uuid" }, // Usando UUID como identificador da foto
           { title: "Nome", order: "nome" },
           { title: "Nome da Mãe", order: "nomeMae" },
           { title: "Nome do Pai", order: "nomePai" },
@@ -53,32 +57,33 @@ procuradosRouter.get("/procurados", (req: Request, res: Response) => {
           { title: "Municipio", order: "municipio" },
         ],
         count: result.count,
-        rows: result.rows.map((procudado) => ({
+        rows: result.rows.map((procurado) => ({
           values: [
-            procudado.nome,
-            procudado.nomeMae,
-            procudado.nomePai,
-            procudado.cpf,
-            procudado.naturalidade,
-            procudado.municipio,
+            `https://your-minio-domain/${procurado.uuid}`, // URL da foto
+            procurado.nome,
+            procurado.nomeMae,
+            procurado.nomePai,
+            procurado.cpf,
+            procurado.naturalidade,
+            procurado.municipio,
           ],
           actions: [
             {
-              id: procudado.id,
+              id: procurado.id,
               name: "edit",
               permission: "contratos_aditivo",
   
-              //Exigido pelo Datatable
+              // Exigido pelo Datatable
               icon: "faEdit",
               title: "Editar",
               variant: "outline-primary",
             },
             {
-              id: procudado.id,
+              id: procurado.id,
               name: "delete",
               permission: "contratos_aditivo",
   
-              //Exigido pelo Datatable
+              // Exigido pelo Datatable
               icon: "faTrash",
               title: "Excluir",
               variant: "outline-danger",
@@ -88,5 +93,65 @@ procuradosRouter.get("/procurados", (req: Request, res: Response) => {
       });
     });
   });
+
+procuradosRouter.get('/procurado/:id/:uuid', (req, res) => {
+    Procurado.findByPk(req.params.id).then(async procurado => {
+        if (procurado && procurado.uuid === req.params.uuid) { 
+            const client = storage({
+                STORAGE_ENDPOINT: process.env.STORAGE_ENDPOINT!,
+                STORAGE_PORT: parseInt(process.env.STORAGE_PORT!),
+                STORAGE_USE_SSL: process.env.STORAGE_USE_SSL === 'true',
+                STORAGE_ACCESS_KEY: process.env.STORAGE_ACCESS_KEY!,
+                STORAGE_SECRET_KEY: process.env.STORAGE_SECRET_KEY!
+            });
+
+            const stream = await client.getObject(process.env.PROCURADO_BUCKET!, procurado.uuid);
+            stream.pipe(res);
+        } else {
+            res.sendStatus(404);
+        }
+    }).catch((err) => {
+        console.log(err);
+        res.sendStatus(500);
+    });      
+});
+
+procuradosRouter.post("/procurado", async (req: Request, res: Response) => {
+  try {
+      const client = storage({
+          STORAGE_ENDPOINT: process.env.STORAGE_ENDPOINT!,
+          STORAGE_PORT: parseInt(process.env.STORAGE_PORT!),
+          STORAGE_USE_SSL: process.env.STORAGE_USE_SSL === 'true',
+          STORAGE_ACCESS_KEY: process.env.STORAGE_ACCESS_KEY!,
+          STORAGE_SECRET_KEY: process.env.STORAGE_SECRET_KEY!
+      });
+
+      const uuid = uuidv4();
+      const buffer = Buffer.from(req.body.arquivo, 'base64');  // Decodifica a imagem base64 para buffer
+      const metadata = {
+          "Content-Type": "image/jpeg"  // Supondo que a imagem seja JPEG
+      };
+
+      try {
+          // A ordem dos argumentos agora está correta
+          await client.putObject(process.env.PROCURADO_BUCKET!, uuid, buffer, buffer.length, metadata);
+          const procurado = await Procurado.create(req.body);
+          await FotoProcurado.create({
+              nome: req.body.nomeFoto, // Nome da foto passado no corpo da requisição
+              tamanho: buffer.length,  // Tamanho da foto
+              uuid: uuid,              // UUID gerado para a foto
+              procuradoId: procurado.id // ID do procurado recém-criado
+          });
+          res.send(procurado);
+      } catch (err) {
+          console.log(err);
+          res.sendStatus(500);
+      }
+  } catch (err) {
+      console.log(err);
+      res.sendStatus(500);
+  }
+});
+
 
 export default procuradosRouter;

@@ -1,19 +1,18 @@
 import { Model, DataTypes } from 'sequelize';
-import sequelize from './index'; // Assumindo que você exportou o sequelize no index.ts
+import sequelize from '../database/connection'; // Importe sua conexão com o banco de dados
 
-
-class Procurados extends Model {
+class Procurado extends Model {
   public id!: number;
   public nome!: string;
-  public dataNascimento!: Date;
   public nomeMae!: string;
   public nomePai!: string;
   public cpf!: string;
   public naturalidade!: string;
   public municipio!: string;
+  public uuid!: string; // UUID para armazenar a referência da foto no MinIO
 }
 
-Procurados.init({
+Procurado.init({
   id: {
     type: DataTypes.INTEGER.UNSIGNED,
     autoIncrement: true,
@@ -21,10 +20,6 @@ Procurados.init({
   },
   nome: {
     type: new DataTypes.STRING(128),
-    allowNull: false,
-  },
-  dataNascimento: {
-    type: DataTypes.DATE,
     allowNull: false,
   },
   nomeMae: {
@@ -49,8 +44,8 @@ Procurados.init({
     allowNull: true,
   },
 }, {
-  sequelize, // Conexão ao banco de dados
-  tableName: 'procurados',
+  sequelize,
+  tableName: 'procurado',
 });
 
-export default Procurados;
+export default Procurado;
