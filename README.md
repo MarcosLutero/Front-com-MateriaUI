@@ -35,7 +35,7 @@ yarn start
 ```
 
 Estrutura do Projeto
-
+```bash
 ├── public          # Arquivos públicos
 ├── src             # Código fonte do projeto
 │   ├── assets      # Arquivos estáticos (imagens, ícones)
@@ -47,6 +47,6 @@ Estrutura do Projeto
 ├── .gitignore      # Arquivos e pastas ignoradas pelo Git
 ├── package.json    # Dependências e scripts do projeto
 └── README.md       # Documentação do projeto
-
+```
 
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
