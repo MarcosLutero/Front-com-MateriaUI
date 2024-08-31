@@ -23,10 +23,18 @@ Para clonar e rodar este projeto, você precisará do [Git](https://git-scm.com)
 ```bash
 git clone https://github.com/MarcosLutero/Front-com-MaterialUI.git
 cd Front-com-MaterialUI
+```
 
+### Passo 2: Instalar Dependências
+```bash
 yarn install
-
+```
+### Passo 3: Executar o Projeto
+```bash
 yarn start
+```
+
+Estrutura do Projeto
 
 ├── public          # Arquivos públicos
 ├── src             # Código fonte do projeto
