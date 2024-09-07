@@ -4,7 +4,6 @@ import * as Yup from 'yup';
 import {
   TextField,
   Button,
-  Grid,
   Select,
   MenuItem,
   FormControl,
@@ -14,26 +13,57 @@ import {
   Box,
   Typography,
 } from '@mui/material';
+import Grid from '@mui/material/Grid';
 import InputMask from 'react-input-mask';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-// Definindo o esquema de validação usando Yup
 const validationSchema = Yup.object({
   nome: Yup.string().required('Nome é obrigatório'),
   dataNascimento: Yup.date().required('Data de nascimento é obrigatória'),
   nomeMae: Yup.string().required('Nome da mãe é obrigatório'),
-  nomePai: Yup.string(), // Nome do pai não é obrigatório
+  nomePai: Yup.string(), 
   cpf: Yup.string()
-    .length(14, 'CPF deve ter 11 dígitos') // Com máscara, o CPF será formatado com 14 caracteres
+    .length(14, 'CPF deve ter 11 dígitos')
     .required('CPF é obrigatório'),
   naturalidade: Yup.string().required('Naturalidade é obrigatória'),
   municipio: Yup.string().required('Município é obrigatório'),
 });
 
-const ProcuradosForm = () => {
-  const [estados, setEstados] = useState([]);
-  const [municipios, setMunicipios] = useState([]);
-  const [selectedEstado, setSelectedEstado] = useState('');
+interface FormValues {
+  foto: File | null;
+  fotoPreview: string | ArrayBuffer | null;
+  nome: string;
+  dataNascimento: string;
+  nomeMae: string;
+  nomePai: string;
+  cpf: string;
+  naturalidade: string;
+  municipio: string;
+}
+
+interface ProcuradosFormProps {
+  initialValues: FormValues;
+  onSubmit: (values: FormValues) => void;
+}
+
+const ProcuradosForm: React.FC<ProcuradosFormProps> = ({ initialValues, onSubmit }) => {
+  const defaultValues: FormValues = {
+    foto: null,
+    fotoPreview: '',
+    nome: '',
+    dataNascimento: '',
+    nomeMae: '',
+    nomePai: '',
+    cpf: '',
+    naturalidade: '',
+    municipio: '',
+  };
+
+  const mergedValues = { ...defaultValues, ...initialValues };
+
+  const [estados, setEstados] = useState<any[]>([]);
+  const [municipios, setMunicipios] = useState<any[]>([]);
+  const [selectedEstado, setSelectedEstado] = useState(mergedValues.naturalidade);
 
   useEffect(() => {
     fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome')
@@ -42,7 +72,7 @@ const ProcuradosForm = () => {
       .catch(error => console.error('Erro ao buscar os estados:', error));
   }, []);
 
-  useEffect(() => {
+    useEffect(() => {
     if (selectedEstado) {
       fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${selectedEstado}/municipios`)
         .then(response => response.json())
@@ -50,35 +80,22 @@ const ProcuradosForm = () => {
         .catch(error => console.error('Erro ao buscar os municípios:', error));
     }
   }, [selectedEstado]);
-
+  
   return (
     <Formik
-      initialValues={{
-        foto: null,
-        fotoPreview: null, // Adicionei a propriedade fotoPreview
-        nome: '',
-        dataNascimento: '',
-        nomeMae: '',
-        nomePai: '',
-        cpf: '',
-        naturalidade: '',
-        municipio: '',
-      }}
+      initialValues={mergedValues}
       validationSchema={validationSchema}
-      onSubmit={(values) => {
-        console.log(values);
-        // Adicione aqui a lógica de envio dos dados
-      }}
+      onSubmit={onSubmit}
     >
       {({ values, handleChange, handleBlur, setFieldValue, handleSubmit, errors, touched }) => (
         <form onSubmit={handleSubmit}>
-          <Grid container spacing={2}>
+          <Grid container spacing={2} marginTop={1}>
             <Grid item xs={12} sm={6} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <Box display="flex" flexDirection="row" alignItems="center" width="100%">
                 <Box
                   sx={{
                     width: '100%',
-                    height: '200px', // Altura fixa para evitar redimensionamento
+                    height: '200px',
                     border: '1px dashed gray',
                     display: 'flex',
                     alignItems: 'center',
@@ -112,7 +129,6 @@ const ProcuradosForm = () => {
                     const file = target.files?.[0];
                     setFieldValue('foto', file);
 
-                    // Visualizar a foto selecionada
                     const reader = new FileReader();
                     reader.onload = () => {
                       if (reader.readyState === 2) {
@@ -154,7 +170,7 @@ const ProcuradosForm = () => {
                 onBlur={handleBlur}
                 fullWidth
                 error={touched.nome && Boolean(errors.nome)}
-                helperText={touched.nome && errors.nome}
+                helperText={touched.nome ? errors.nome : ''}
               />
               <TextField
                 label="Data de Nascimento"
@@ -168,8 +184,8 @@ const ProcuradosForm = () => {
                   shrink: true,
                 }}
                 error={touched.dataNascimento && Boolean(errors.dataNascimento)}
-                helperText={touched.dataNascimento && errors.dataNascimento}
-                sx={{ mt: 2 }} // Espaçamento superior entre os campos
+                helperText={touched.dataNascimento ? errors.dataNascimento : ''}
+                sx={{ mt: 2 }}
               />
               <TextField
                 label="Nome da Mãe"
@@ -179,8 +195,8 @@ const ProcuradosForm = () => {
                 onBlur={handleBlur}
                 fullWidth
                 error={touched.nomeMae && Boolean(errors.nomeMae)}
-                helperText={touched.nomeMae && errors.nomeMae}
-                sx={{ mt: 2 }} // Espaçamento superior entre os campos
+                helperText={touched.nomeMae ? errors.nomeMae : ''}
+                sx={{ mt: 2 }}
               />
             </Grid>
 
@@ -193,7 +209,7 @@ const ProcuradosForm = () => {
                 onBlur={handleBlur}
                 fullWidth
                 error={touched.nomePai && Boolean(errors.nomePai)}
-                helperText={touched.nomePai && errors.nomePai}
+                helperText={touched.nomePai ? errors.nomePai : ''}
               />
             </Grid>
 
@@ -210,7 +226,7 @@ const ProcuradosForm = () => {
                     name="cpf"
                     fullWidth
                     error={touched.cpf && Boolean(errors.cpf)}
-                    helperText={touched.cpf && errors.cpf}
+                    helperText={touched.cpf ? errors.cpf : ''}
                   />
                 )}
               </InputMask>
@@ -224,7 +240,7 @@ const ProcuradosForm = () => {
                   value={values.naturalidade}
                   onChange={(e) => {
                     handleChange(e);
-                    setSelectedEstado(e.target.value); // Atualiza o estado selecionado
+                    setSelectedEstado(e.target.value);
                   }}
                   onBlur={handleBlur}
                 >
@@ -248,11 +264,11 @@ const ProcuradosForm = () => {
                   fullWidth
                   disabled={!selectedEstado}
                 >
-                  {municipios.map((municipio: any) => (
+                  {Array.isArray(municipios) ? municipios.map((municipio: any) => (
                     <MenuItem key={municipio.id} value={municipio.nome}>
                       {municipio.nome}
                     </MenuItem>
-                  ))}
+                  )) : null}
                 </Select>
               </FormControl>
             </Grid>

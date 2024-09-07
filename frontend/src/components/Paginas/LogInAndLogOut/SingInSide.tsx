@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -17,6 +17,8 @@ import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import axios from 'axios'; // Importe axios para fazer a requisição HTTP
+import { AppContext } from '../../context';
 
 function Copyright(props: any) {
   return (
@@ -35,27 +37,33 @@ const defaultTheme = createTheme();
 
 export default function SignInSide() {
   const [error, setError] = useState<string | null>(null);
-  const [showPassword, setShowPassword] = useState(false); // Estado para controlar a visibilidade da senha
+  const [showPassword, setShowPassword] = useState(false);
+  const { setToken } = useContext(AppContext);
   const navigate = useNavigate();
 
   const handleClickShowPassword = () => {
     setShowPassword((prev) => !prev);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const email = data.get('email') as string;
     const password = data.get('password') as string;
-  
-    const result = fakeAuthLogin(email, password);
-  
-    if (result.success) {
-      navigate('/dashboard');
-    } else {
-      setError(result.message || "An unknown error occurred"); // Garante que uma mensagem de erro seja exibida
+
+    try {
+      const response = await axios.post('http://localhost:3001/login', { email, senha: password });
+      if (response.data.token) {
+        setToken(response.data.token, response.data.usuario); // Armazena o token no Context e LocalStorage
+        navigate('/dashboard');
+      } else {
+        setError("Email ou Senha incorretos");
+      }
+    } catch (err) {
+      setError("Falha na autenticação. Por favor, verifique suas credenciais.");
     }
   };
+
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -113,7 +121,7 @@ export default function SignInSide() {
                 fullWidth
                 name="password"
                 label="Password"
-                type={showPassword ? 'text' : 'password'}  // Alterna o tipo de input entre 'text' e 'password'
+                type={showPassword ? 'text' : 'password'}
                 id="password"
                 autoComplete="current-password"
                 InputProps={{
@@ -161,18 +169,4 @@ export default function SignInSide() {
       </Grid>
     </ThemeProvider>
   );
-}
-
-// Simulação de função de login
-function fakeAuthLogin(email: string, password: string) {
-  const validEmail = "gar.nt@segup.pa.gov.br";
-  const validPassword = "senh@d0g@r";
-
-  if (email === validEmail && password === validPassword) {
-    const token = "fake-jwt-token";
-    localStorage.setItem("token", token);
-    return { success: true, token };
-  } else {
-    return { success: false, message: "Email ou Senha incorretos" };
-  }
 }

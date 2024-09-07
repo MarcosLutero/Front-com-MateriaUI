@@ -1,20 +1,23 @@
-import { Model, DataTypes } from 'sequelize';
-import sequelize from '../database/connection'; // Importe sua conexão com o banco de dados
-import FotoProcurado from './FotoProcurado';
+import { Model, DataTypes, BelongsToManyAddAssociationsMixin } from 'sequelize';
+import sequelize from '../database/connection';
+import Perfil from './Perfil';
+import FotoUsuario from './FotoUsuario';
 
-class Procurado extends Model {
+class Usuario extends Model {
   public id!: number;
   public nome!: string;
-  public nomeMae!: string;
-  public nomePai!: string;
   public cpf!: string;
+  public email!: string;
   public naturalidade!: string;
   public municipio!: string;
+  public senha!: string;
+  public status!: string;
+  public Perfis?: Perfil[]; // Adicione a propriedade `Perfis`
+  public FotoUsuario?: FotoUsuario[];
 
-  public FotoProcurados?: FotoProcurado[];
 }
 
-Procurado.init({
+Usuario.init({
   id: {
     type: DataTypes.INTEGER.UNSIGNED,
     autoIncrement: true,
@@ -24,11 +27,7 @@ Procurado.init({
     type: new DataTypes.STRING(128),
     allowNull: false,
   },
-  nomeMae: {
-    type: new DataTypes.STRING(128),
-    allowNull: false,
-  },
-  nomePai: {
+  email: {
     type: new DataTypes.STRING(128),
     allowNull: false,
   },
@@ -37,9 +36,17 @@ Procurado.init({
     allowNull: false,
     unique: true,
   },
+  senha: {
+    type: new DataTypes.STRING(128),
+    allowNull: false,
+  },
   naturalidade: {
     type: new DataTypes.STRING(128),
     allowNull: true,
+  },
+  status: {
+    type: new DataTypes.STRING(128),
+    defaultValue: 'Ativo'
   },
   municipio: {
     type: new DataTypes.STRING(128),
@@ -47,7 +54,7 @@ Procurado.init({
   },
 }, {
   sequelize,
-  tableName: 'procurado',
+  tableName: 'usuario',
 });
 
-export default Procurado;
+export default Usuario;

@@ -1,10 +1,9 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import Datatable from './Datatable';
-import { Action } from './Types'; // Importa a interface Action
-import Request from '../Request';
+import { Action } from './Types';
+import superagent from 'superagent';
 import { AppContext } from '../../context';
 import {
-  Button,
   Dialog,
   DialogTitle,
   DialogContent,
@@ -32,11 +31,12 @@ class ModelList extends React.Component<ModelListProps> {
 
   state = {
     isModalOpen: false,
+    modalContent: null,
   };
 
   static defaultProps: Partial<ModelListProps> = {
     title: "Lista de Registros",
-    modelIcon: SvgIcon, 
+    modelIcon: SvgIcon,
     modelForm: (props) => <div {...props} />,
     modelName: "model",
     modalSize: "md",
@@ -46,32 +46,73 @@ class ModelList extends React.Component<ModelListProps> {
   };
 
   onAction(action: Action, update: () => void) {
-    const token = this.context.token || ""; 
     const defaultHandler = () => {
       const url = `${this.props.url}/${action.id}`;
       switch (action.name) {
-        // Código do case
+        case 'edit':
+          superagent
+            .get(url)
+            .set('Authorization', `Bearer ${this.context.token!}`)
+            .then((res) => {
+              const Form = this.props.modelForm!;
+              const props = {
+                initialValues: res.body,
+                onSubmit: () => update(),
+              };
+              this.setState({
+                modalContent: <Form {...props} />,
+                isModalOpen: true,
+              });
+            })
+            .catch(err => {
+              console.log(err);
+            });
+          break;
+        case 'delete':
+          if (window.confirm(`Deseja realmente excluir o registro com id ${action.id}?`)) {
+            superagent
+              .delete(url)
+              .set('Authorization', `Bearer ${this.context.token!}`)
+              .then(() => {
+                update();
+              })
+              .catch(err => {
+                console.log(err);
+              });
+          }
+          break;
+        default:
+          console.log("Ação não reconhecida");
       }
     };
 
-    if (this.props.onAction) this.props.onAction(action, update, defaultHandler);
-    else defaultHandler();
+    if (this.props.onAction) {
+      this.props.onAction(action, update, defaultHandler);
+    } else {
+      defaultHandler();
+    }
   }
 
   handleAddClick = () => {
-    this.setState({ isModalOpen: true });
-  };
-
-  handleCloseModal = () => {
-    this.setState({ isModalOpen: false });
-  };
-
-  render() {
     const EmptyForm = this.props.modelForm!;
     const emptyProps = {
       [this.props.modelName!]: this.props.empty,
+      onSave: () => {
+        this.handleCloseModal();
+      },
     };
 
+    this.setState({
+      modalContent: <EmptyForm {...emptyProps} />,
+      isModalOpen: true,
+    });
+  };
+
+  handleCloseModal = () => {
+    this.setState({ isModalOpen: false, modalContent: null });
+  };
+
+  render() {
     return (
       <div className="h-100 d-flex flex-column">
         <h3 className="mb-3">
@@ -87,14 +128,12 @@ class ModelList extends React.Component<ModelListProps> {
           <Datatable
             url={this.props.url}
             useAdd={this.props.useAdd}
-            onError={(err) => this.context.addToast({ titulo: "Erro", conteudo: err.toString() })}
             onAction={(action: Action, update) => this.onAction(action, update)}
             onClickAdd={this.handleAddClick}
             filter={this.props.filter}
           />
         </div>
 
-        {/* Modal for the form */}
         <Dialog
           open={this.state.isModalOpen}
           onClose={this.handleCloseModal}
@@ -103,7 +142,7 @@ class ModelList extends React.Component<ModelListProps> {
         >
           <DialogTitle>{`Adicionar ${this.props.title}`}</DialogTitle>
           <DialogContent>
-            <EmptyForm {...emptyProps} />
+            {this.state.modalContent}
           </DialogContent>
         </Dialog>
       </div>

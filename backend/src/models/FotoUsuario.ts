@@ -1,16 +1,16 @@
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../database/connection'; 
-import Procurado from './Procurado';
+import Usuario from './Usuario';
 
-class FotoProcurado extends Model {
+class FotoUsuario extends Model {
   public id!: number;
   public nome!: string;
   public tamanho!: number;
   public uuid!: string; // UUID para armazenar a referência da foto no MinIO
-  public procuradoId!: number; // Chave estrangeira para associar ao Procurado
+  public UsuarioId!: number; // Chave estrangeira para associar ao Procurado
 }
 
-FotoProcurado.init({
+FotoUsuario.init({
   id: {
     type: DataTypes.INTEGER.UNSIGNED,
     autoIncrement: true,
@@ -29,18 +29,18 @@ FotoProcurado.init({
     allowNull: false,
     unique: true,
   },
-  procuradoId: {
+  UsuarioId: {
     type: DataTypes.INTEGER.UNSIGNED,
     allowNull: false,
     references: {
-      model: Procurado,
+      model: Usuario,
       key: 'id'
     },
-    onDelete: 'CASCADE', // Deleta as foto quando o procurado for deletado
+    onDelete: 'CASCADE',
   },
 }, {
   sequelize,
-  tableName: 'foto_procurado',
+  tableName: 'foto_usuario',
 });
 
-export default FotoProcurado;
+export default FotoUsuario;

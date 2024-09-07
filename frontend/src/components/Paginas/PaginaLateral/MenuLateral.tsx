@@ -25,7 +25,7 @@ const MenuLateral: React.FC = () => {
   const menuItems = [
     { text: "Dashboard", icon: <InboxIcon />, path: "/dashboard" },
     { text: "Procurados", icon: <MailIcon />, path: "/procurados" },
-    { text: "Educação", icon: <InboxIcon />, path: "/educacao" },
+    { text: "Usuarios", icon: <InboxIcon />, path: "/usuarios" },
     { text: "Segurança", icon: <MailIcon />, path: "/seguranca" },
   ];
 

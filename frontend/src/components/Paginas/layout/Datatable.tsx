@@ -18,22 +18,14 @@ import {
   FormControl,
   InputLabel,
   InputAdornment,
+  Tooltip,
 } from "@mui/material";
-import {
-  Add as AddIcon,
-  Search as SearchIcon,
-  List as ListIcon,
-  ArrowBack as ArrowBackIcon,
-  ArrowForward as ArrowForwardIcon,
-  FastForward as FastForwardIcon,
-  FastRewind as FastRewindIcon,
-  ArrowDownward as ArrowDownwardIcon,
-  ArrowUpward as ArrowUpwardIcon,
-} from "@mui/icons-material";
+import * as Icons from '@mui/icons-material';
 import moment from "moment";
-import Request from "superagent";
+import superagent from "superagent";
 import { AppContext } from "../../context";
 import { Action } from './Types';
+
 interface Header {
   order?: string;
   title: string;
@@ -45,7 +37,6 @@ interface Row {
   actions: Action[];
   values: (string | string[])[];
 }
-
 
 interface DatatableProps {
   url?: string;
@@ -90,7 +81,7 @@ class Datatable extends React.Component<DatatableProps, DatatableState> {
   };
 
   setPopoverContent(key: number) {
-    // Implemente aqui o que for necessário ou deixe vazio se não precisar de nada específico
+    // Implementação específica para o popover (pode estar vazia)
   }
 
   componentDidMount() {
@@ -100,7 +91,7 @@ class Datatable extends React.Component<DatatableProps, DatatableState> {
   update() {
     if (this.props.url) {
       let payload: Record<string, any> = {
-        ...(typeof this.props.filter === 'object' ? this.props.filter : {}), // Garante que seja um objeto
+        ...(typeof this.props.filter === 'object' ? this.props.filter : {}),
         filter: this.state.filter,
         limit: this.state.limit,
         offset: this.state.limit > 0 ? this.state.offset : 0,
@@ -123,7 +114,8 @@ class Datatable extends React.Component<DatatableProps, DatatableState> {
         });
       }
 
-      Request.get(this.props.url)
+      superagent
+        .get(this.props.url)
         .query(payload)
         .set(headers)
         .end((err, res) => {
@@ -191,9 +183,9 @@ class Datatable extends React.Component<DatatableProps, DatatableState> {
       const icon =
         this.state.order === header.order && header.order ? (
           this.state.dir === "ASC" ? (
-            <ArrowDownwardIcon fontSize="small" />
+            <Icons.ArrowDownward fontSize="small" />
           ) : (
-            <ArrowUpwardIcon fontSize="small" />
+            <Icons.ArrowUpward fontSize="small" />
           )
         ) : null;
       return (
@@ -214,17 +206,22 @@ class Datatable extends React.Component<DatatableProps, DatatableState> {
       const actions =
         row.actions.length > 0
           ? row.actions.map((action, key2) => {
+            const IconComponent = Icons[action.icon as keyof typeof Icons]; // Busca o ícone pelo nome
+
+            if (!IconComponent) {
+              console.error(`Icon "${action.icon}" not found`);
+              return null;
+            }
+
             return (
-              <Button
-                key={key2}
-                size="small"
-                variant={action.variant}
-                onClick={() => this.onAction(action)}
-                startIcon={action.icon}
-                style={{ marginLeft: "0.5rem" }}
-              >
-                {action.title}
-              </Button>
+              <Tooltip title={action.title} key={key2}>
+                <IconButton
+                  size="small"
+                  onClick={() => this.onAction(action)}
+                >
+                  <IconComponent />
+                </IconButton>
+              </Tooltip>
             );
           })
           : "Sem Ações";
@@ -241,7 +238,7 @@ class Datatable extends React.Component<DatatableProps, DatatableState> {
                   })
                 }
               >
-                <ListIcon />
+                <Icons.List />
               </IconButton>
               <Popover
                 open={Boolean(this.state.anchorEl)}
@@ -317,14 +314,14 @@ class Datatable extends React.Component<DatatableProps, DatatableState> {
     }
 
     const tools = (
-      <div  style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
         {this.props.useAdd && (
           <Button
             size="small"
             variant="outlined"
             color="primary"
             onClick={() => this.onClickAdd()}
-            startIcon={<AddIcon style={{ color: 'green' }} />}
+            startIcon={<Icons.Add style={{ color: 'green' }} />}
             style={{ borderColor: 'green', color: 'green', height: '40px' }}
           >
             Adicionar
@@ -340,13 +337,13 @@ class Datatable extends React.Component<DatatableProps, DatatableState> {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <SearchIcon />
+                <Icons.Search />
               </InputAdornment>
             ),
           }}
         />
 
-        <Typography variant="body1" >
+        <Typography variant="body1">
           <strong>Total:</strong> {this.state.count ?? 0} registros.
         </Typography>
         <FormControl size="small" variant="outlined" style={{ minWidth: 120, height: "40px" }}>
@@ -374,7 +371,6 @@ class Datatable extends React.Component<DatatableProps, DatatableState> {
           boundaryCount={1}
           color="primary"
           size="small"
-
         />
       </div>
     );

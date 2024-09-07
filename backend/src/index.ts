@@ -4,30 +4,30 @@ import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import { Sequelize } from 'sequelize';
 import Routers from "./router/index";
+import authenticate from "./middleware/authenticate"
+import initdb from "./database/initdb"
 
 const app: Application = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.json());
-
-// Configura e registra os roteadores
-Routers.forEach(router => {
-  app.use(router);
-});
+app.use(authenticate()); // Middleware de autenticação aplicado globalmente
 
 // Configuração do Sequelize para conectar ao banco de dados
 const sequelize = new Sequelize(
-  process.env.DB_NAME??"seguranca",  // Nome do banco de dados
-  process.env.DB_USER??"root",  // Usuário do banco de dados
-  process.env.DB_PASS??"root",  // Senha do banco de dados
+  "seguranca", // Nome da base de dados
+  "root",      // Nome de usuário do MySQL
+  "root",      // Senha do MySQL
   {
-    host: process.env.DB_HOST??"localhost",  // Host do banco de dados
-    port: process.env.DB_PORT ? parseInt(process.env.DB_PORT) : 3306,  // Porta do banco de dados, com conversão para número
-    dialect: "mysql",  // Dialeto do banco de dados
-    logging: false,  // Desativa os logs SQL do Sequelize
+    host: "localhost",
+    port: 3306,
+    dialect: "mysql",
+    logging: false,
   }
 );
+
+
 
 // Autentica a conexão com o banco de dados
 sequelize.authenticate()
@@ -43,7 +43,18 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Servidor rodando com TypeScript, Sequelize e CORS!');
 });
 
-// Inicia o servidor na porta especificada
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
-});
+const main = async () => {
+  initdb(); // Inicializa os relacionamentos do banco de dados
+
+  // Inicia o servidor
+  app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+  });
+
+  // Registra as rotas após inicializar o banco de dados e middleware
+  Routers.forEach(router => {
+    app.use(router);
+  });
+}
+
+main(); // Chama a função principal para iniciar o aplicativo

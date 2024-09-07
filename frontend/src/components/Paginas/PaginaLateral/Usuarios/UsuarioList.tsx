@@ -1,19 +1,19 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../../context';
 import ModelList from '../../layout/Model';
-import ProcuradosForm from './ProcuradosForm';
+import UsuarioForm from './UsuarioForm';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 
-export default function ProcuradosList() {
+export default function UsuarioList() {
   const context = useContext(AppContext);
   return (
     <ModelList
-      url={context.config.BACKEND_URL + '/procurados'}
+      url={context.config.BACKEND_URL + '/usuarios'}
       useAdd={true}
-      title="Lista de Procurados"
+      title="Lista de Usarios"
       modelIcon={NewspaperIcon}
-      modelName="produrados"
-      modelForm={ProcuradosForm}
+      modelName="usuarios"
+      modelForm={UsuarioForm}
     />
   );
 }

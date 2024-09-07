@@ -1,10 +1,8 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -13,6 +11,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom'; // Importe o useNavigate
+import axios from 'axios';
 
 function Copyright(props: any) {
   return (
@@ -29,19 +28,28 @@ function Copyright(props: any) {
 
 const defaultTheme = createTheme();
 
-export default function SignUp() {
+export default function Login() {
   const navigate = useNavigate(); // Crie uma instância do useNavigate
+  const [error, setError] = useState('');
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    const email = data.get('email');
+    const password = data.get('password');
 
-    // Navegue para o Dashboard após o cadastro
-    navigate('/dashboard');
+    try {
+      const response = await axios.post('http://localhost:3001/login', { email, password });
+
+      // Armazena o token no localStorage (ou onde você preferir)
+      localStorage.setItem('token', response.data.token);
+
+      // Navegue para o Dashboard após o login bem-sucedido
+      navigate('/dashboard');
+    } catch (err) {
+      setError('Email ou senha incorretos');
+      console.error(err);
+    }
   };
 
   return (
@@ -60,31 +68,11 @@ export default function SignUp() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign up
+            Sign in
           </Typography>
+          {error && <Typography color="error">{error}</Typography>}
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                />
-              </Grid>
               <Grid item xs={12}>
                 <TextField
                   required
@@ -106,12 +94,6 @@ export default function SignUp() {
                   autoComplete="new-password"
                 />
               </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
-                />
-              </Grid>
             </Grid>
             <Button
               type="submit"
@@ -119,12 +101,12 @@ export default function SignUp() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign Up
+              Sign In
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2" onClick={() => navigate('/login')}>
-                  Already have an account? Sign in
+                <Link href="#" variant="body2" onClick={() => navigate('/signup')}>
+                  Don't have an account? Sign up
                 </Link>
               </Grid>
             </Grid>
